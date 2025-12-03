@@ -6,16 +6,16 @@ This project is a smart solar-powered street lighting system using IoT technolog
 - [Smart Solar Street Lighting System (S3LS)](#smart-solar-street-lighting-system-s3ls)
   - [1. Project Introduction (The Core Idea)](#1-project-introduction-the-core-idea)
   - [2. Main Components and Their Roles](#2-main-components-and-their-roles)
-  - [Visual Device Photos](#visual-device-photos)
-  - [3. ESP8266 Pin Wiring Guide](#3-esp8266-pin-wiring-guide)
+  - [3. Visual Device Photos](#3-visual-device-photos)
+  - [4. ESP8266 Pin Wiring Guide](#4-esp8266-pin-wiring-guide)
     - [A. Power \& Ground Connection](#a-power--ground-connection)
     - [B. Sensor Input (LDR)](#b-sensor-input-ldr)
     - [C. Control Output (Relay)](#c-control-output-relay)
-  - [4. Wi-Fi and Sectoral Installation Design](#4-wi-fi-and-sectoral-installation-design)
-  - [5. AP Connection Flow (Provisioning) and SSID Credentials](#5-ap-connection-flow-provisioning-and-ssid-credentials)
-  - [6. Station (STA) Connection Flow to MQTT Broker](#6-station-sta-connection-flow-to-mqtt-broker)
-  - [7. How to Setup Arduino](#7-how-to-setup-arduino)
-  - [8. Video Demo](#8-video-demo)
+  - [5. Wi-Fi and Sectoral Installation Design](#5-wi-fi-and-sectoral-installation-design)
+  - [6. AP Connection Flow (Provisioning) and SSID Credentials](#6-ap-connection-flow-provisioning-and-ssid-credentials)
+  - [7. Station (STA) Connection Flow to MQTT Broker](#7-station-sta-connection-flow-to-mqtt-broker)
+  - [8. How to Setup Arduino](#8-how-to-setup-arduino)
+  - [9. Video Demo](#9-video-demo)
 
 
 ## 1. Project Introduction (The Core Idea)
@@ -46,7 +46,7 @@ Below are the key roles of each component in the **Control Box** and Server:
 | **MQTT Broker Server** | **Pub/Sub Communication Center.** Real-time message handling. | TCP/IP |
 
 
-## Visual Device Photos
+## 3. Visual Device Photos
 
 Below are the key installation of each component in the **Control Box** and Server:
 
@@ -63,7 +63,7 @@ Below are the key installation of each component in the **Control Box** and Serv
 | **DC 12V Lamp** | ![ss](ss/device-lampu-dc.jpg)  |
 
 
-## 3. ESP8266 Pin Wiring Guide
+## 4. ESP8266 Pin Wiring Guide
 
 Proper wiring is very important, especially for power:
 
@@ -88,7 +88,7 @@ Proper wiring is very important, especially for power:
 
 
 
-## 4. Wi-Fi and Sectoral Installation Design
+## 5. Wi-Fi and Sectoral Installation Design
 
 This system uses a **Sectoral** network strategy for scalability and stability:
 
@@ -100,7 +100,7 @@ This system uses a **Sectoral** network strategy for scalability and stability:
 
 
 
-## 5. AP Connection Flow (Provisioning) and SSID Credentials
+## 6. AP Connection Flow (Provisioning) and SSID Credentials
 
 This process is important for device configuration in the field (over-the-air):
 
@@ -131,7 +131,7 @@ Set Jumper PIN from Pin D0 to GROUND and start microcontroller
 ![ss](ss/arduino-acces-point-reset.jpg)
 
 
-## 6. Station (STA) Connection Flow to MQTT Broker
+## 7. Station (STA) Connection Flow to MQTT Broker
 
 ![ss](ss/ardunion-mode-station.jpg)
 
@@ -141,16 +141,13 @@ After connecting to Wi-Fi, IoT communication works as follows:
 1.  **MQTT Connection:** ESP8266 creates an **MQTT Client** connection to the **MQTT Broker Server** address.
 2.  **Publish (Send Telemetry):**
     * Periodically, ESP8266 reads **LDR** value and internal status.
-    * Data is sent (published) to a unique status topic: `sssls/sectorB/node10/status` (Payload: JSON or string).
-3.  **Subscribe (Receive Command):**
-    * ESP8266 **subscribes** to its control topic: `sssls/sectorB/node10/control`.
-    * Received messages (e.g. *force_on* command) trigger a callback function to control the **Relay** directly.
+    * Data is sent (published) to a unique status topic: `solar/lamp/status` (Payload: JSON or string).
 
 ![ss](ss/mqtt.jpg)
 
 
 
-## 7. How to Setup Arduino
+## 8. How to Setup Arduino
 
 Make sure the ESP8266 Board anda Lib ESP8266 is allready install in arduino 
  
@@ -159,7 +156,7 @@ Make sure the ESP8266 Board anda Lib ESP8266 is allready install in arduino
 - ![Arduino Setup 3](ss/arduino-3.jpg)
 
 
-## 8. Video Demo
+## 9. Video Demo
 
 For a video Demo , see:
 
