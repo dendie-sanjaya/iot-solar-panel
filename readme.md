@@ -8,9 +8,8 @@ This project is a smart solar-powered street lighting system using IoT technolog
   - [2. Main Components and Their Roles](#2-main-components-and-their-roles)
   - [3. Visual Device Photos](#3-visual-device-photos)
   - [4. ESP8266 Pin Wiring Guide](#4-esp8266-pin-wiring-guide)
-    - [A. Power \& Ground Connection](#a-power--ground-connection)
-    - [B. Sensor Input (LDR)](#b-sensor-input-ldr)
-    - [C. Control Output (Relay)](#c-control-output-relay)
+    - [A. Sensor Input (LDR)](#a-sensor-input-ldr)
+    - [B. Control Output (Relay)](#b-control-output-relay)
   - [5. Wi-Fi and Sectoral Installation Design](#5-wi-fi-and-sectoral-installation-design)
   - [6. AP Connection Flow (Provisioning) and SSID Credentials](#6-ap-connection-flow-provisioning-and-ssid-credentials)
   - [7. Station (STA) Connection Flow to MQTT Broker](#7-station-sta-connection-flow-to-mqtt-broker)
@@ -67,25 +66,24 @@ Below are the key installation of each component in the **Control Box** and Serv
 
 Proper wiring is very important, especially for power:
 
-![ss](design/pin-relay.jpg)
+### A. Sensor Input (LDR)
 
 ![ss](design/pin-light-sensor.jpg)
 
-
-### A. Power & Ground Connection
-* **VCC:** ESP8266 **VCC** pin connects to **DC 5V output** from the **Solar Charger Controller (SCC)**.
-* **GND:** Make sure all **GND** pins (ESP8266, Relay, SCC) are connected to **Common Ground**.
-
-### B. Sensor Input (LDR)
 * **LDR:** Connect the LDR in a **Voltage Divider** circuit.
 * **Pin:** The middle point of the divider connects to **A0** pin on ESP8266.
 * **Logic:** In code, the analog value (0-1023) is used to determine day/night threshold.
 
-### C. Control Output (Relay)
+### B. Control Output (Relay)
+
+![ss](design/pin-relay.jpg)
+
+
 * **Relay Signal:** Relay signal pin (e.g. IN) connects to one of the **Digital Output (GPIO)** pins on ESP8266.
 * **Recommended Pins:** **GPIO4 (D2)** or **GPIO5 (D1)**.
 * **Function:** HIGH signal (3.3V) from ESP8266 activates the relay, which then switches the DC 12V circuit to the lamp.
-
+* **VCC:** ESP8266 **VCC** pin connects to **DC 5V output** from the **Solar Charger Controller (SCC)**.
+* **GND:** Make sure all **GND** pins (ESP8266, Relay, SCC) are connected to **Common Ground**.
 
 
 ## 5. Wi-Fi and Sectoral Installation Design
@@ -122,9 +120,9 @@ This process is important for device configuration in the field (over-the-air):
 
 **5. Final Transition** | **AP Mode (Access Point)** | ESP8266 reboots and automatically connects to the sector router. 
 
-**6. Reset To Access Point ** | **AP Mode (Access Point)** | 
+**6.For Reset To Access Point** | **AP Mode (Access Point)** | 
 
-Set Jumper PIN from Pin D0 to GROUND and start microcontroller
+For Reset and backto mode Acces Point, than Jumper PIN from Pin D0 to GROUND and start up microcontroller
 
 ![ss](ss/arduino-acces-point-reset-pin.jpg)
 
