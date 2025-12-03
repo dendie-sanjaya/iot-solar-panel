@@ -54,7 +54,7 @@ Below are the key installation of each component in the **Control Box** and Serv
 | Area/Komponen | Foto Komponen |
 | :--- | :--- |
 | **Solar Panel** | ![ss](ss/device-panel-surya.jpg)  |
-| **Dry Cell Battery** | ![ss](ss/device-aki.jpg.jpg)  |
+| **Dry Cell Battery** | ![ss](ss/device-aki.jpg)  |
 | **Solar Charger Controller (SCC)** | ![ss](ss/device-ssc.jpg)  |
 | **LDR Light Sensor** | ![ss](ss/device-sensor-cahaya.jpg)  |
 | **Microcontroller (ESP8266)** | ![ss](ss/device-esp8266.jpg)  |
