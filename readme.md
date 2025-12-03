@@ -58,7 +58,7 @@ Below are the key installation of each component in the **Control Box** and Serv
 | **Dry Cell Battery** | ![ss](ss/device-aki.jpg.jpg)  |
 | **Solar Charger Controller (SCC)** | ![ss](ss/device-ssc.jpg)  |
 | **LDR Light Sensor** | ![ss](ss/device-sensor-cahaya.jpg)  |
-| **Microcontroller (ESP8266)** | ![ss](ss/device-esp8266)  |
+| **Microcontroller (ESP8266)** | ![ss](ss/device-esp8266.jpg)  |
 | **Relay** | ![ss](ss/device-relay.jpg)  |
 | **DC 12V Lamp** | ![ss](ss/device-lampu-dc.jpg)  |
 
@@ -152,16 +152,11 @@ After connecting to Wi-Fi, IoT communication works as follows:
 
 ## 7. How to Setup Arduino
 
-To set up the Arduino for this project, follow these steps:
-
-1. Connect the Arduino board as shown in the wiring diagrams above.
-2. Upload the firmware to the Arduino using the Arduino IDE.
-3. Make sure the ESP8266 is connected to the correct pins and powered properly.
-4. Use the screenshots below for reference:
-
-    - ![Arduino Setup 1](ss/arduino-1.jpg)
-    - ![Arduino Setup 2](ss/arduino-2.jpg)
-    - ![Arduino Setup 3](ss/arduino-3.jpg)
+Make sure the ESP8266 Board anda Lib ESP8266 is allready install in arduino 
+ 
+- ![Arduino Setup 1](ss/arduino-1.jpg)
+- ![Arduino Setup 2](ss/arduino-2.jpg)
+- ![Arduino Setup 3](ss/arduino-3.jpg)
 
 
 ## 8. Video Demo
