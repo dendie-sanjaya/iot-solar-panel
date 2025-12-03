@@ -1,6 +1,22 @@
+# Smart Solar Street Lighting System (S3LS)
+
+This project is a smart solar-powered street lighting system using IoT technology. It combines solar panels, batteries, sensors, and microcontrollers to automate and remotely control street lights for better energy efficiency and easier management. The system is designed to work independently and can be monitored or controlled from anywhere using Wi-Fi and MQTT.
 
 
-# Smart Solar Street Lighting System (SSSLS)
+- [Smart Solar Street Lighting System (S3LS)](#smart-solar-street-lighting-system-s3ls)
+  - [1. Project Introduction (The Core Idea)](#1-project-introduction-the-core-idea)
+  - [2. Main Components and Their Roles](#2-main-components-and-their-roles)
+  - [Visual Device Photos](#visual-device-photos)
+  - [3. ESP8266 Pin Wiring Guide](#3-esp8266-pin-wiring-guide)
+    - [A. Power \& Ground Connection](#a-power--ground-connection)
+    - [B. Sensor Input (LDR)](#b-sensor-input-ldr)
+    - [C. Control Output (Relay)](#c-control-output-relay)
+  - [4. Wi-Fi and Sectoral Installation Design](#4-wi-fi-and-sectoral-installation-design)
+  - [5. AP Connection Flow (Provisioning) and SSID Credentials](#5-ap-connection-flow-provisioning-and-ssid-credentials)
+  - [6. Station (STA) Connection Flow to MQTT Broker](#6-station-sta-connection-flow-to-mqtt-broker)
+  - [7. How to Setup Arduino](#7-how-to-setup-arduino)
+  - [8. Video Demo](#8-video-demo)
+
 
 ## 1. Project Introduction (The Core Idea)
 
@@ -10,7 +26,6 @@ The **SSSLS** project is an **Internet of Things (IoT)** solution designed to op
 2.  **Remote Control:** Connects to an **MQTT Broker** via **Wi-Fi** for status monitoring and remote force ON/OFF control from a central dashboard.
 
 The main goal is to achieve **maximum energy efficiency** and provide **flexible, centralized infrastructure management**.
-
 
 
 ## 2. Main Components and Their Roles
@@ -132,3 +147,26 @@ After connecting to Wi-Fi, IoT communication works as follows:
     * Received messages (e.g. *force_on* command) trigger a callback function to control the **Relay** directly.
 
 ![ss](ss/mqtt.jpg)
+
+
+
+## 7. How to Setup Arduino
+
+To set up the Arduino for this project, follow these steps:
+
+1. Connect the Arduino board as shown in the wiring diagrams above.
+2. Upload the firmware to the Arduino using the Arduino IDE.
+3. Make sure the ESP8266 is connected to the correct pins and powered properly.
+4. Use the screenshots below for reference:
+
+    - ![Arduino Setup 1](ss/arduino-1.jpg)
+    - ![Arduino Setup 2](ss/arduino-2.jpg)
+    - ![Arduino Setup 3](ss/arduino-3.jpg)
+
+
+## 8. Video Demo
+
+For a video Demo , see:
+
+- [Local video file](ss/video.mp4)
+- [YouTube Short](https://youtube.com/shorts/37actHR2E6Q?si=oFd_P6X04tOaGNcf)
